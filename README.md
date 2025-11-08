@@ -25,7 +25,7 @@ bash src/practice_animal_book/tests/test_interaction.sh
 ### Install or update a project
 
 ```shell
-if ! command -v personal-assistant &> /dev/null; then
+if ! command -v animal-book &> /dev/null; then
     uv tool install git+https://github.com/Alirex/practice_animal_book
 else
     uv tool upgrade practice-animal-book
