@@ -1,6 +1,20 @@
-# Python Laboratory
+# Practice: Animal Book
 
-Experiments with Python.
+---
+
+## Run
+
+Run the project:
+
+```shell
+uv run practice-animal-book
+```
+
+## Demo
+
+```shell
+bash src/practice_animal_book/tests/test_interaction.sh
+```
 
 ---
 
