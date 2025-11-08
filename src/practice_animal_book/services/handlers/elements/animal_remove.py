@@ -11,6 +11,8 @@ if TYPE_CHECKING:
 
 def animal_remove(book: Book, args: T_ARGS) -> HandlerOutput:
     uid_str = args[0]
+
+    # uid = uuid.UUID(uid_str)
     uid = AnimalUid(uuid.UUID(uid_str))
 
     if uid not in book:
