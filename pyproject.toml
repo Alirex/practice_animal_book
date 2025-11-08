@@ -21,7 +21,7 @@ dev = [
 ]
 
 [project.scripts]
-practice-animal-book = "practice_animal_book:main"
+animal-book = "practice_animal_book:main"
 
 [build-system]
 requires = ["uv_build>=0.9.8,<0.10.0"]
