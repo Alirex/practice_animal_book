@@ -4,10 +4,16 @@
 
 ## Run
 
-Run the project:
+Run from the project:
 
 ```shell
-uv run practice-animal-book
+uv run animal-book
+```
+
+Run after installation:
+
+```shell
+animal-book
 ```
 
 ## Demo
