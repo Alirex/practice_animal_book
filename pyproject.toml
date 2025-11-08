@@ -8,7 +8,9 @@ authors = [
 ]
 requires-python = ">=3.14"
 dependencies = [
+    # Better classes and validation.
     "pydantic>=2.12.4",
+    # Pretty terminal output.
     "rich>=14.2.0",
 ]
 
