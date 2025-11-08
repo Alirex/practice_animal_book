@@ -1,9 +1,7 @@
 import uuid
-from typing import TypeAlias, TypedDict
+from typing import NewType, TypedDict
 
 from pydantic import BaseModel, Field
-
-from practice_animal_book.models.animals.animal_abc import T_ANIMAL_UID
 
 
 class OwnerInfo(TypedDict):
@@ -12,11 +10,11 @@ class OwnerInfo(TypedDict):
     address: str
 
 
-T_OWNER_UID: TypeAlias = uuid.UUID
+OwnerUid = NewType("OwnerUid", uuid.UUID)
 
 
 class Owner(BaseModel):
-    uid: T_ANIMAL_UID = Field(default_factory=uuid.uuid7)
+    uid: OwnerUid = Field(default_factory=lambda: OwnerUid(uuid.uuid7()))
     name: str
     age: int
     address: str
