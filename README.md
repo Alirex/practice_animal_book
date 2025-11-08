@@ -16,6 +16,40 @@ uv run practice-animal-book
 bash src/practice_animal_book/tests/test_interaction.sh
 ```
 
+### Install or update a project
+
+```shell
+if ! command -v personal-assistant &> /dev/null; then
+    uv tool install git+https://github.com/Alirex/practice_animal_book
+else
+    uv tool upgrade practice-animal-book
+fi
+```
+
+Note: You can change the url to something like this if the repository is private:
+
+- git+https://github.com/Alirex/practice_animal_book
+
+Or, for development, change the installation command to:
+
+```shell
+uv tool install --editable .
+```
+
+And run it from the repository directory.
+
+### Remove project
+
+```shell
+uv tool uninstall practice-animal-book
+```
+
+### Check project in the list
+
+```shell
+uv tool list --show-python
+```
+
 ---
 
 ## Dev
