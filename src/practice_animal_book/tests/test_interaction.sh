@@ -12,7 +12,7 @@ set -o nounset
 # [bash_init]-[END]
 
 
-cat <<EOF | uv run practice-animal-book
+cat <<EOF | uv run animal-book
 animals_show
 animal_add dog Buddy 3
 animal_add cat Whiskers 2
@@ -22,7 +22,7 @@ EOF
 
 echo "----- Restarting -----"
 
-cat <<EOF | uv run practice-animal-book
+cat <<EOF | uv run animal-book
 animals_show
 drop_book
 animals_show
@@ -31,7 +31,7 @@ EOF
 
 echo "----- Restarting -----"
 
-cat <<EOF | uv run practice-animal-book
+cat <<EOF | uv run animal-book
 animals_show
 exit
 EOF
