@@ -1,6 +1,6 @@
 import abc
 import uuid
-from typing import TYPE_CHECKING, TypeAlias
+from typing import TYPE_CHECKING, NewType, TypeAlias
 from uuid import uuid7
 
 from pydantic import BaseModel, Field
@@ -9,7 +9,7 @@ if TYPE_CHECKING:
     from practice_animal_book.models.animals.animal_type import AnimalType
     from practice_animal_book.services.handlers.handler_output import T_RICH_FORMATTED_MESSAGE
 
-T_ANIMAL_UID: TypeAlias = uuid.UUID
+AnimalUid = NewType("AnimalUid", uuid.UUID)
 
 
 T_WEIGHT: TypeAlias = float
@@ -23,7 +23,7 @@ T_CLI_FIELDS: TypeAlias = dict[T_FIELD_NAME, T_FIELD_VALUE]
 
 
 class AnimalOutput(BaseModel):
-    uid: T_ANIMAL_UID
+    uid: AnimalUid
     nickname: T_ANIMAL_NICKNAME
     weight: T_WEIGHT
 
@@ -31,7 +31,7 @@ class AnimalOutput(BaseModel):
 
 
 class Animal(abc.ABC, BaseModel):
-    uid: T_ANIMAL_UID = Field(default_factory=uuid7)
+    uid: AnimalUid = Field(default_factory=lambda: AnimalUid(uuid7()))
     nickname: T_ANIMAL_NICKNAME
     weight: T_WEIGHT
 

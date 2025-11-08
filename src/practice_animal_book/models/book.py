@@ -1,7 +1,7 @@
 from collections import UserDict
 
-from practice_animal_book.models.animals.animal_abc import T_ANIMAL_UID, Animal
+from practice_animal_book.models.animals.animal_abc import Animal, AnimalUid
 
 
-class Book(UserDict[T_ANIMAL_UID, Animal]):
+class Book(UserDict[AnimalUid, Animal]):
     pass
