@@ -1,6 +1,7 @@
 exclude: |
   (?x)^(
-    \.idea/.*
+    \.idea/.*|
+    \.run/.*
     )$
 
 repos:
