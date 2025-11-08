@@ -4,8 +4,9 @@ import rich.table
 
 from practice_animal_book.paths import FILES_PATH
 from practice_animal_book.services.book_manager import BookManager
+from practice_animal_book.services.handlers.action import Action
 from practice_animal_book.services.handlers.actions_mapping import ACTIONS_MAPPING
-from practice_animal_book.services.parse_input import parse_input
+from practice_animal_book.services.parse_input import ParsedInput, parse_input
 
 
 def main() -> None:
@@ -14,9 +15,13 @@ def main() -> None:
 
         console.print("Welcome to the animal book!")
         while True:
-            input_str = console.input("Enter an action: ")
+            try:
+                input_str = console.input("Enter an action: ")
+            except KeyboardInterrupt:
+                parsed_input = ParsedInput(action=Action.EXIT)
+            else:
+                parsed_input = parse_input(input_str)
 
-            parsed_input = parse_input(input_str)
             console.print(parsed_input)
 
             action_func = ACTIONS_MAPPING[parsed_input.action]
