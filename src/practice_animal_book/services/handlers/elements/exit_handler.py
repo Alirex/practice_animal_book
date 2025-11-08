@@ -12,4 +12,4 @@ def exit_handler(
     book: Book,  # noqa: ARG001
     args: T_ARGS,  # noqa: ARG001
 ) -> HandlerOutput:
-    return HandlerOutput(message="Bye!", is_exit=True)
+    return HandlerOutput(message="\nBye!", is_exit=True)

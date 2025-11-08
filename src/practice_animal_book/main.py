@@ -16,7 +16,7 @@ def main() -> None:
         console.print("Welcome to the animal book!")
         while True:
             try:
-                input_str = console.input("Enter an action: ")
+                input_str = console.input("Enter an action: \n")
             except KeyboardInterrupt:
                 parsed_input = ParsedInput(action=Action.EXIT)
             else:
